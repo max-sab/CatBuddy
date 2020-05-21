@@ -8,10 +8,26 @@
 
 import Foundation
 
-struct Cat: Decodable {
-    
+struct Cat {
+    let breeds: [Breed]
+    let id: String
+    let image: String
+}
+
+extension Cat: Decodable {
+    enum CodingKeys: String, CodingKey {
+        case breeds
+        case id
+        case image = "url"
+    }
 }
 
 struct Breed: Decodable {
-    
+    let name: String
+    let temperament: String
+    let origin: String
+    let description: String
+    let dogFriendly: Int
+    let energyLevel: Int
+    let socialNeeds: Int
 }
