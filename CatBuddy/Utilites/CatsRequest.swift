@@ -18,7 +18,9 @@ class CatsRequest<Resource : APIResource> {
 
 extension CatsRequest : NetworkRequest {
     func decode(_ data: Data) -> [Resource.ModelType]? {
-        let decodedData = try? JSONDecoder().decode([Resource.ModelType].self, from: data)
+        let jsonDecoder = JSONDecoder()
+        jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
+        let decodedData = try? jsonDecoder.decode([Resource.ModelType].self, from: data)
         return decodedData
     }
 
@@ -38,16 +40,16 @@ protocol APIResource {
 
 extension APIResource {
     var url: URL? {
-        var urlComponents = URLComponents(string: "https://api.thecatapi.com/v1/")
-        urlComponents?.path = path
-        urlComponents?.queryItems = queryItems
-        return urlComponents?.url
+        var urlComponents = URLComponents(string: "https://api.thecatapi.com/v1")!
+        urlComponents.path = path
+        urlComponents.queryItems = queryItems
+        return urlComponents.url
     }
 }
 
 struct CatsResource: APIResource {
     typealias ModelType = Cat
-    let path = "images/"
+    let path = "/images/"
     let queryItems = [
        // URLQueryItem(name: "x-api-key", value: ""),
         URLQueryItem(name: "has_breeds", value: "1"),

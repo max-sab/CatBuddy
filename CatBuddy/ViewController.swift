@@ -19,7 +19,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
 
-
+        fetchQuestion()
     }
 
     func configureUI(with cat: Cat) {

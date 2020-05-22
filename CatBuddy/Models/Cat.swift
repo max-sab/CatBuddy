@@ -31,3 +31,4 @@ struct Breed: Decodable {
     let energyLevel: Int
     let socialNeeds: Int
 }
+
