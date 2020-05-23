@@ -17,7 +17,7 @@ protocol NetworkRequest: AnyObject {
 extension NetworkRequest {
     func load(_ url: URL, with completion: @escaping (ModelType?) -> ()) {
         var apiKey = ""
-        if let filepath = Bundle.main.path(forResource: "api", ofType: "txt") {
+        if let filepath = Bundle.main.path(forResource: "apiKey", ofType: "txt") {
             do {
                 apiKey = try String(contentsOfFile: filepath)
             } catch {
