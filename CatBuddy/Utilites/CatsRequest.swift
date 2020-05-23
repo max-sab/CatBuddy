@@ -49,7 +49,7 @@ extension APIResource {
 
 struct CatsResource: APIResource {
     typealias ModelType = Cat
-    let path = "/images/"
+    let path = "v1/images/search"
     let queryItems = [
        // URLQueryItem(name: "x-api-key", value: ""),
         URLQueryItem(name: "has_breeds", value: "1"),
