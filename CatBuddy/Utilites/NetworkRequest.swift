@@ -16,8 +16,23 @@ protocol NetworkRequest: AnyObject {
 
 extension NetworkRequest {
     func load(_ url: URL, with completion: @escaping (ModelType?) -> ()) {
+        var apiKey = ""
+        if let filepath = Bundle.main.path(forResource: "api", ofType: "txt") {
+            do {
+                apiKey = try String(contentsOfFile: filepath)
+            } catch {
+                completion(nil)
+                return
+            }
+        } else {
+           completion(nil)
+           return
+        }
+
+        var request = URLRequest(url: url)
+        request.setValue(apiKey, forHTTPHeaderField: "x-api-key")
         let session = URLSession(configuration: .default, delegate: nil, delegateQueue: .main)
-        let task = session.dataTask(with: url, completionHandler: { [weak self] (data: Data?, response: URLResponse?, error: Error?) -> Void in
+        let task = session.dataTask(with: request, completionHandler: { [weak self] (data: Data?, response: URLResponse?, error: Error?) -> Void in
             guard let data = data else {
                 completion(nil)
                 return
