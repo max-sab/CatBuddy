@@ -22,7 +22,7 @@ extension Cat: Decodable {
     }
 }
 
-struct Breed: Decodable {
+struct Breed {
     let name: String
     let temperament: String
     let origin: String
@@ -32,3 +32,14 @@ struct Breed: Decodable {
     let socialNeeds: Int
 }
 
+extension Breed: Decodable {
+    enum CodingKeys: String, CodingKey {
+        case name
+        case temperament
+        case origin
+        case description
+        case dogFriendly
+        case energyLevel
+        case socialNeeds
+    }
+}

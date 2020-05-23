@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		505D24B32479144D00C4EAF5 /* apiKey.txt in Resources */ = {isa = PBXBuildFile; fileRef = 505D24B22479144D00C4EAF5 /* apiKey.txt */; };
+		505D24B5247916BF00C4EAF5 /* CatProfileDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505D24B4247916BF00C4EAF5 /* CatProfileDataSource.swift */; };
+		505D24B8247917E600C4EAF5 /* StackContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505D24B7247917E600C4EAF5 /* StackContainerView.swift */; };
+		505D24BA2479182000C4EAF5 /* CatProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505D24B92479182000C4EAF5 /* CatProfileView.swift */; };
 		507C4FB7247484000037665C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507C4FB6247484000037665C /* AppDelegate.swift */; };
 		507C4FB9247484000037665C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507C4FB8247484000037665C /* SceneDelegate.swift */; };
 		507C4FBB247484000037665C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507C4FBA247484000037665C /* ViewController.swift */; };
@@ -22,6 +25,9 @@
 
 /* Begin PBXFileReference section */
 		505D24B22479144D00C4EAF5 /* apiKey.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = apiKey.txt; sourceTree = "<group>"; };
+		505D24B4247916BF00C4EAF5 /* CatProfileDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatProfileDataSource.swift; sourceTree = "<group>"; };
+		505D24B7247917E600C4EAF5 /* StackContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackContainerView.swift; sourceTree = "<group>"; };
+		505D24B92479182000C4EAF5 /* CatProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatProfileView.swift; sourceTree = "<group>"; };
 		507C4FB3247484000037665C /* CatBuddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CatBuddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		507C4FB6247484000037665C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		507C4FB8247484000037665C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +53,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		505D24B6247917C200C4EAF5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				505D24B7247917E600C4EAF5 /* StackContainerView.swift */,
+				505D24B92479182000C4EAF5 /* CatProfileView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		507C4FAA247483FF0037665C = {
 			isa = PBXGroup;
 			children = (
@@ -66,6 +81,7 @@
 		507C4FB5247484000037665C /* CatBuddy */ = {
 			isa = PBXGroup;
 			children = (
+				505D24B6247917C200C4EAF5 /* Views */,
 				508FEC332476EA47000F079F /* Models */,
 				508FEC2C2476DE20000F079F /* Utilites */,
 				507C4FB6247484000037665C /* AppDelegate.swift */,
@@ -86,6 +102,7 @@
 				508FEC312476E9F6000F079F /* NetworkRequest.swift */,
 				5092F7CE247704B300EDD76C /* ImageRequest.swift */,
 				5092F7D02477101500EDD76C /* CatsRequest.swift */,
+				505D24B4247916BF00C4EAF5 /* CatProfileDataSource.swift */,
 			);
 			path = Utilites;
 			sourceTree = "<group>";
@@ -171,12 +188,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				508FEC2E2476E29F000F079F /* Cat.swift in Sources */,
+				505D24B5247916BF00C4EAF5 /* CatProfileDataSource.swift in Sources */,
 				5092F7CF247704B300EDD76C /* ImageRequest.swift in Sources */,
+				505D24BA2479182000C4EAF5 /* CatProfileView.swift in Sources */,
 				507C4FBB247484000037665C /* ViewController.swift in Sources */,
 				5092F7D12477101500EDD76C /* CatsRequest.swift in Sources */,
 				507C4FB7247484000037665C /* AppDelegate.swift in Sources */,
 				507C4FB9247484000037665C /* SceneDelegate.swift in Sources */,
 				508FEC322476E9F6000F079F /* NetworkRequest.swift in Sources */,
+				505D24B8247917E600C4EAF5 /* StackContainerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

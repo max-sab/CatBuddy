@@ -40,7 +40,7 @@ protocol APIResource {
 
 extension APIResource {
     var url: URL? {
-        var urlComponents = URLComponents(string: "https://api.thecatapi.com/v1")!
+        var urlComponents = URLComponents(string: "https://api.thecatapi.com")!
         urlComponents.path = path
         urlComponents.queryItems = queryItems
         return urlComponents.url
@@ -49,7 +49,7 @@ extension APIResource {
 
 struct CatsResource: APIResource {
     typealias ModelType = Cat
-    let path = "v1/images/search"
+    let path = "/v1/images/search"
     let queryItems = [
        // URLQueryItem(name: "x-api-key", value: ""),
         URLQueryItem(name: "has_breeds", value: "1"),
